@@ -5,6 +5,9 @@ from config import BOT_TOKEN, setup_logging, validate_bot_token_or_raise
 from database.models import Base
 from database.db import engine
 
+# 🔽 добавляем импорт роутера
+from handlers.start import router as start_router
+
 logger = logging.getLogger(__name__)
 
 async def on_startup():
@@ -21,15 +24,17 @@ async def main():
     - логирование
     - валидация токена
     - инициализация бота и БД
+    - регистрация маршрутов
     - запуск polling
     """
     setup_logging()
-
-    # Валидация токена до создания Bot(...)
     validate_bot_token_or_raise(BOT_TOKEN)
 
     bot = Bot(token=BOT_TOKEN)
     dp = Dispatcher()
+
+    # 🔽 регистрируем /start
+    dp.include_router(start_router)
 
     await on_startup()
     logger.info("🤖 Бот запущен и готов к работе!")

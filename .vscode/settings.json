@@ -1,0 +1,28 @@
+{
+    // === 🐍 Python настройки ===
+    "python.defaultInterpreterPath": "venv/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "code-runner.executorMap": {
+        "python": "python3"
+    },
+    "code-runner.runInTerminal": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+
+    // === 🤖 GitHub Copilot настройки ===
+    // 🚫 Полный запрет авто-подсказок Copilot
+    "editor.inlineSuggest.enabled": false,
+    "github.copilot.inlineSuggest.enable": false,
+
+    // 🔘 Разрешаем только ручной вызов Copilot
+    "github.copilot.enable": {
+        "*": false,
+        "python": true
+    },
+    "github.copilot.suggestionShowOnTriggerOnly": true
+}

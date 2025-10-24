@@ -30,8 +30,10 @@ Thumbs.db
 .vscode/launch.json
 .vscode/keybindings.json
 .idea/
+*.code-workspace
 
 # --- Локальные скрипты и вспомогательные файлы ---
 init_vscode_project.sh
 setup_*.sh
 local_*.sh
+ARCHITECTURE.md

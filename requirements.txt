@@ -1,3 +1,12 @@
-# Базовые зависимости проекта
-black
-pylint
+# --- Базовые зависимости проекта ---
+black                     # автоформатирование кода
+pylint                    # статический анализатор
+aiogram==3.*              # Telegram Bot Framework
+SQLAlchemy==2.*           # ORM для работы с PostgreSQL
+asyncpg                   # асинхронный драйвер PostgreSQL
+python-dotenv             # работа с .env файлами
+openai                    # OpenAI API SDK
+
+# --- FAISS (через conda, НЕ через pip) ---
+# FAISS необходимо устанавливать отдельно:
+# conda install -c conda-forge faiss-cpu

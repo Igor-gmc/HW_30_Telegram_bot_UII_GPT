@@ -25,7 +25,7 @@ Thumbs.db
 
 # --- IDE / VS Code ---
 .vscode/
-vscode/
+.vscode/
 .vscode/settings.json
 .vscode/launch.json
 .vscode/keybindings.json

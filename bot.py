@@ -13,6 +13,12 @@ from handlers.start import router as start_router
 from handlers.tasks import router as tasks_router
 from handlers.deals import router as deals_router
 
+# --- NEW CODE START: добавлены ChatGPT и отчёт ---
+from handlers.marketing import router as marketing_router
+from handlers.motivation import router as motivation_router
+from handlers.report import router as report_router
+# --- NEW CODE END ---
+
 logger = logging.getLogger(__name__)
 
 async def on_startup():
@@ -31,7 +37,7 @@ async def main():
     1. Настраивает логирование.
     2. Проверяет валидность BOT_TOKEN.
     3. Инициализирует бота и диспетчер (Dispatcher).
-    4. Подключает все роутеры (start, tasks, deals).
+    4. Подключает все роутеры (start, tasks, deals, marketing, motivation, report).
     5. Создаёт таблицы в БД при старте.
     6. Запускает постоянный цикл polling.
     """
@@ -52,6 +58,12 @@ async def main():
     dp.include_router(start_router)
     dp.include_router(tasks_router)
     dp.include_router(deals_router)
+
+    # --- NEW CODE START: добавлены модули ChatGPT и отчёт ---
+    dp.include_router(marketing_router)
+    dp.include_router(motivation_router)
+    dp.include_router(report_router)
+    # --- NEW CODE END ---
 
     # Инициализация базы данных
     await on_startup()
